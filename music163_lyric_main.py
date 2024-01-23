@@ -18,7 +18,7 @@ def is_no_crawl(value):
 def run():
     for index, id_name in enumerate(music163_get_id_name.get_id_name()):
         if is_no_crawl(str(id_name)):
-            print(f'正在采集第{index+1}个 {id_name[1]} 的歌词,id:{id_name[0]}')
+            print(f'正在采集第{index+1}个 {id_name[1]} 的歌词...')
             music163_lyric.get_lyric(*id_name)
             time.sleep(random.uniform(0.5, 1.0))
         else:
