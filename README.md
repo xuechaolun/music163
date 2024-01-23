@@ -3,7 +3,7 @@
 
 #### Interpreter
 >Node.js v20.11.0
-
+>
 >Python 3.9.18
 
 #### Dependent third-party libraries
@@ -12,5 +12,7 @@ node
 
 python
 >redis
+>
 >requests
+>
 >PyExecJS
