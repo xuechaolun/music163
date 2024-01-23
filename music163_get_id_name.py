@@ -2,14 +2,14 @@
 import re
 
 import requests
-import randomua
+import randomUA
 
 
 # 默认为热歌榜的id
 def get_id_name(params_id="3778678"):
     headers = {
         "referer": "https://music.163.com/",
-        "user-agent": randomua.get_random_ua()
+        "user-agent": randomUA.get_random_ua()
     }
     url = "https://music.163.com/discover/toplist"
     params = {

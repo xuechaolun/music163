@@ -4,7 +4,7 @@ import os.path
 import requests
 import execjs
 
-import randomua
+import randomUA
 
 
 def get_lyric(my_id, name):
@@ -28,7 +28,7 @@ def get_lyric(my_id, name):
     ret = jsc.call('d', x1, x2, x3, x4)
 
     headers = {
-        'User-Agent': randomua.get_random_ua()
+        'User-Agent': randomUA.get_random_ua()
     }
 
     data = {
