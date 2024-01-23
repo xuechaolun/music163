@@ -51,4 +51,4 @@ def get_lyric(my_id, name):
 
 
 if __name__ == '__main__':
-    get_lyric('169121960', '离别开出花')
+    get_lyric('2061978961', '离别开出花')
