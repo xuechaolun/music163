@@ -16,6 +16,8 @@ def is_no_crawl(value):
 
 def get_singer_lyric(singer, page):
     id_name_list = music163_get_singer_id_name.get_singer_id_name(singer, page)
+    if not id_name_list:
+        return None
     for id_name in id_name_list:
         # print(id_name)
         if is_no_crawl(str(id_name)):
@@ -26,10 +28,10 @@ def get_singer_lyric(singer, page):
 
 if __name__ == '__main__':
     # 多线程
-    with concurrent.futures.ThreadPoolExecutor(max_workers=10) as exe:
-        for p in range(10):
-            exe.submit(get_singer_lyric, '就是南方凯', p)
+    # with concurrent.futures.ThreadPoolExecutor(max_workers=10) as exe:
+    #     for p in range(10):
+    #         exe.submit(get_singer_lyric, '就是南方凯', p)
 
     # 单线程
-    # for p in range(10):
-    #     get_singer_lyric('就是南方凯', p)
+    for p in range(10):
+        get_singer_lyric('张杰', p)

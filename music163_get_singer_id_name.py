@@ -50,9 +50,8 @@ def get_singer_id_name(singer='就是南方凯', offset=0):
         songs = response.json().get('result').get('songs')
         info = list()
         for item in songs:
-            if singer in item.get('name'):
-                name = item.get('name')
-            else:
+            name = item.get('name')
+            if singer not in name:
                 name = f"{singer}-{item.get('name')}"
             info.append((item.get('id'), name))
     except Exception as e:
