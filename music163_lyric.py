@@ -43,6 +43,10 @@ def get_lyric(my_id, name):
         print(f'{name} 的歌词采集到了...')
         if not os.path.exists('./lyric'):
             os.mkdir('lyric')
+        # 防止歌名里有“/”，例如：张杰/张碧晨-只要平凡（钢琴曲）
+        if '/' in name:
+            name = name.replace('/', '-')
+        name = name.strip()
         with open(f'./lyric/{name}.txt', 'w') as fw:
             fw.write(lyric)
     else:
