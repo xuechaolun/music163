@@ -38,6 +38,7 @@ def get_lyric(my_id, name):
     response = requests.post(url, data=data, headers=headers)
 
     lyric = response.json().get('lrc').get('lyric')
+    response.close()
 
     if lyric:
         print(f'{name} 的歌词采集到了...')
@@ -51,8 +52,11 @@ def get_lyric(my_id, name):
             fw.write(lyric)
     else:
         print(f'{name} 的歌词没有采集到...')
-    response.close()
+
+
+def save_lyric(lyric, filename, filepath):
+    pass
 
 
 if __name__ == '__main__':
-    get_lyric('2061978961', '离别开出花')
+    get_lyric('2061978961', '就是南方凯-离别开出花')

@@ -48,12 +48,7 @@ def get_singer_id_name(singer='就是南方凯', offset=0):
     print(response)
     try:
         songs = response.json().get('result').get('songs')
-        info = list()
-        for item in songs:
-            name = item.get('name')
-            if singer not in name:
-                name = f"{singer}-{item.get('name')}"
-            info.append((item.get('id'), name))
+        info = [(item.get('id'), item.get('name').strip()) for item in songs]
     except Exception as e:
         print(e)
         info = None
@@ -62,8 +57,8 @@ def get_singer_id_name(singer='就是南方凯', offset=0):
 
 
 if __name__ == '__main__':
-    sing = '就是南方凯'
-    page = 20
+    sing = '九三'
+    page = 10
     if not os.path.exists('./singer'):
         os.mkdir('./singer')
 

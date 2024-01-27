@@ -1,5 +1,4 @@
 # 2024/1/26 17:18
-# 判断是否被采集过
 import hashlib
 import concurrent.futures
 
@@ -9,6 +8,7 @@ import music163_get_singer_id_name
 import music163_lyric
 
 
+# 判断是否被采集过
 def is_no_crawl(value):
     redis_client = redis.Redis()
     return redis_client.sadd('music163_lyric:filter', hashlib.md5(value.encode()).hexdigest())
@@ -34,4 +34,4 @@ if __name__ == '__main__':
 
     # 单线程
     for p in range(10):
-        get_singer_lyric('张杰', p)
+        get_singer_lyric('九三', p)
