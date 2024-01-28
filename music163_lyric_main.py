@@ -28,7 +28,7 @@ def run():
 
 def run_thread_version():
     with concurrent.futures.ThreadPoolExecutor() as pool:
-        for index, id_name in enumerate(music163_get_id_name.get_id_name('2809513713')):
+        for index, id_name in enumerate(music163_get_id_name.get_id_name()):
             if is_no_crawl(str(id_name)):
                 print(f'正在采集第{index+1}个 {id_name[1]} 的歌词...')
                 pool.submit(music163_lyric.get_lyric, *id_name)
