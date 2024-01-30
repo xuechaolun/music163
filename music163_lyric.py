@@ -59,4 +59,4 @@ def save_lyric(lyric, filename, filepath):
 
 
 if __name__ == '__main__':
-    get_lyric('2061978961', '离别开出花')
+    get_lyric('1366551860', '天龙八部之宿敌')

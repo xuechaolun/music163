@@ -57,7 +57,7 @@ def get_singer_id_name(singer='就是南方凯', offset=0):
 
 
 if __name__ == '__main__':
-    sing = '九三'
+    sing = '薛之谦'
     page = 10
     if not os.path.exists('./singer'):
         os.mkdir('./singer')
